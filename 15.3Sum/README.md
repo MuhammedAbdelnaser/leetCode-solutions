@@ -39,3 +39,17 @@ Explanation: The only possible triplet sums up to 0.
 * `3 <= nums.length <= 3000`
 * `-10^5 <= nums[i] <= 10^5`
   
+## Solution
+
+### High-level Idea
+
+* The idea is to sort the array and iterate through it.
+  * For each element, we want to find two other elements that sum to the negative of the current element.
+  * We can do this by using two pointers, one at the element after the current element and one at the end of the array.
+  * If the sum of the three elements is less than 0, we increment the left pointer.
+  * If the sum of the three elements is greater than 0, we decrement the right pointer.
+  * If the sum of the three elements is equal to 0, we add the three elements to the result and increment the left pointer and decrement the right pointer.
+  * We also need to make sure that we don't add duplicate triplets to the result.
+    * To do this, we can skip over duplicate elements when we increment or decrement the pointers.
+  * Return the result at the end.
+  * If the array is empty, return an empty array.
